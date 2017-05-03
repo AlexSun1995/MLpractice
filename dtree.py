@@ -80,3 +80,4 @@ def create_data_set(path):
 
 if __name__ != '__main__':
     print 'd_tree algorithm'
+    print "test of giiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiit"
