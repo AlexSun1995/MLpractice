@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from math import log
-import uniout
+import uniout  # 列表打印能够输出中文
 
 
 def cnt_majority(data):
@@ -17,7 +17,7 @@ def cnt_majority(data):
         if cnt[key] > max_times:
             max_times = cnt[key]
             ans = key
-    return
+    return ans
 
 
 def create_decision_tree(data_set, labels):
@@ -31,8 +31,10 @@ def create_decision_tree(data_set, labels):
         return cnt_majority(data_set)
     label_id = find_best_label(data_set)
     label = labels[label_id]
+    print 'the label we get:', label
     tree_node = {label: {}}
-    val_set = set([val for val in data_set[label_id]])
+    val_set = set([val[label_id] for val in data_set])
+    print 'val set', val_set
     del(labels[label_id])
     for val in val_set:
         new_label = labels[:]
@@ -57,6 +59,7 @@ def find_best_label(data_set):
 
 
 def find_by_best_gain(data_set):
+    print 'data_set:', data_set
     num_features = len(data_set[0]) - 1
     info_ent = cal_info_ent(data_set)
     best_label = -1
@@ -68,7 +71,7 @@ def find_by_best_gain(data_set):
         for val in unique_features:
             sub_set = split_data_set(data_set, i, val)
             new_ent += cal_info_ent(sub_set)
-        info_gain = new_ent - info_ent
+        info_gain = info_ent - new_ent
         if info_gain > max_info_gain:
             max_info_gain = info_gain
             best_label = i
@@ -113,14 +116,14 @@ def create_data_set(path):
 
 
 if __name__ == '__main__':
-    path = r'C:\Users\User\MLpractice\datasets\wm2.txt'
+    f_path = r'C:\Users\User\MLpractice\datasets\wm2no_id.txt'
     print 'd-tree algorithm start!'
-    print 'read data set where path = ', path
-    data_set, labels = create_data_set(path)
+    print 'read data set where path = ', f_path
+    my_data_set, my_labels = create_data_set(f_path)
     # test of create data_set
     # print data_set
     # print labels
-    d_tree = create_decision_tree(data_set, labels)
+    d_tree = create_decision_tree(my_data_set, my_labels)
     print d_tree
 
 
