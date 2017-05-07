@@ -1,6 +1,14 @@
 # -*- coding:utf-8 -*-
-from math import log
+import math
+import show_plot
 import uniout  # 列表打印能够输出中文
+import sys
+
+
+defaultencoding = 'utf-8'
+if sys.getdefaultencoding() != defaultencoding:
+    reload(sys)
+    sys.setdefaultencoding(defaultencoding)
 
 
 def cnt_majority(data):
@@ -95,17 +103,17 @@ def cal_info_ent(data_set):
     for key in feature_cnt.keys():
         prob = float(feature_cnt[key]) / size
         print 'prob ', prob
-        total_ent -= prob * log(prob, 2)
+        total_ent -= prob * math.log(prob, 2)
     return total_ent
 
 
-def create_data_set(path):
+def create_data_set(path, split_label=','):
     i_file = open(path, 'r')
     data = []
     label = []
     first_line = True
     for line in i_file:
-        vector = line.strip().split(',')
+        vector = line.strip().split(split_label)
         if first_line:
             first_line = False
             label = vector
@@ -125,5 +133,5 @@ if __name__ == '__main__':
     # print labels
     d_tree = create_decision_tree(my_data_set, my_labels)
     print d_tree
-
+    show_plot.createPlot(d_tree)
 

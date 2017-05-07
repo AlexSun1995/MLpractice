@@ -1,0 +1,18 @@
+Colour_lustre,root,type, texture, navel, tactility, good_melon
+Green, curled_up, turbidity, clear, sag, hard_smooth, is
+Black, curled_up, depressing, clear, sag, hard_smooth, is
+Black, curled_up, turbidity, clear, sag, hard_smooth, is
+Green, curled_up, dull, clear, sag, hard_smooth, is
+Plain, curled_up, turbidity, clarity, sag, hard_smooth, is
+Green, slightly_curled, turbidity, clarity, slightly_concave, soft_glue, is
+Black, slightly_curled, turbidity, slightly_paste, slightly_concave, soft_glue, is
+Black, slightly_curled, turbidity, clarity, slightly_concave, hard_smooth, is
+Black, slightly_curled, dull, slightly_paste, slightly_concave, smooth, no
+Green, strong, clear, clear, smooth, soft_sticky, no
+Plain, strong, clear, fuzzy, flat, hard_smooth, no
+Plain, curled_up, turbidity, fuzzy, flat, soft_sticky, no
+Green, slightly_curled, turbidity, slightly_paste, sag, hard_smooth, no
+Plain, slightly_curled, dull, slightly_paste, sag, hard_smooth, no
+Black, slightly_curled, turbidity, clarity, slightly concave, soft_sticky, no
+Plain, curled_up, turbidity, fuzzy, flat, hard_smooth, no
+Green, curled_up, depressing, slightly_paste, slightly_concave, smooth, no
